@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyApi.Models
 {
-    [Table("hotel")] // map to the exact table name
+    [Table("hotel")] // exact table name
     public class Hotel
     {
         [Key]
@@ -59,4 +59,3 @@ namespace MyApi.Models
         public string? HotelWebsiteUrl { get; set; }
     }
 }
-
