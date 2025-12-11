@@ -10,6 +10,15 @@ namespace MyApi.Data
         {
         }
 
-        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Hotel> Hotels { get; set; } // EF property name
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Map EF to exact table name in PostgreSQL
+            modelBuilder.Entity<Hotel>().ToTable("hotel");
+        }
     }
 }
+
